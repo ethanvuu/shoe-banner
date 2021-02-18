@@ -1,0 +1,161 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #dce4e9;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  min-height: 1200px;
+  top: -900px;
+  left: 0;
+  transform: skewY(-25deg);
+  transform-origin: 100%;
+  background-color: white;
+}
+
+.shoes {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  height: 100vh;
+  overflow: hidden;
+  padding-bottom: 250px;
+}
+
+.shadow {
+  position: absolute;
+  top: 120px;
+  left: 20%;
+  top: 15%;
+  transform: translateY(-50%);
+  width: 400px;
+  max-width: 50%;
+  z-index: 1;
+  background-size: 100%;
+  animation-delay: 1s;
+  pointer-events: none;
+  animation: fly1 4s ease-in-out infinite;
+}
+
+.shoe {
+  position: absolute;
+  top: 30%;
+  right: -20px;
+  width: 835px;
+  max-width: 90%;
+  transform: rotate(-5deg) scale(1.5);
+  z-index: 2;
+  animation: fly 3s ease-in-out infinite;
+  transition: all 0.3s ease-in 0s;
+}
+
+/*NAIL*/
+
+.nails {
+  height: 800px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nailsafter {
+  height: 100px;
+  background: #000;
+}
+
+.nail {
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  height: 141px;
+  width: 100%;
+  transform: translateY(0%);
+  opacity: 1;
+  transition: opacity 0.2s ease-in 0.1s, transform 0.5s ease-in 0.35s;
+  transition-delay: 0.4s;
+}
+
+.shoe2 {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  width: 800px;
+  max-width: 80%;
+  z-index: 9;
+  transform: translateX(-50%) translateY(0%);
+  opacity: 1;
+  transition: opacity 0.75s linear 0.1s, transform 0.4s linear 0s;
+}
+
+.hammer {
+  width: 526px;
+  position: absolute;
+  left: -70px;
+  bottom: 220px;
+  max-width: 60%;
+  z-index: 10;
+  opacity: 1;
+  transform: rotate(0deg);
+  transform-origin: 0 100%;
+  transition: opacity 0.5s ease-in 0.1s, transform 0.5s ease-in 0.35s;
+}
+
+.shoe2.none {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-30%);
+  transition-delay: 0.4s;
+}
+
+.hammer.none {
+  opacity: 0;
+  transform: rotate(-45deg);
+}
+
+.nail.none {
+  opacity: 0;
+  transform: translateY(20%);
+}
+
+@media screen and (max-width: 650px) {
+    .shoe2 {
+         bottom: 20px;
+    }
+    .hammer {
+        bottom: 180px;
+    }
+    .shoes {
+      padding-bottom: 40px;
+    }
+}
+
+@keyframes fly {
+  0% {
+    transform: translate3d(0, 0, 0) translate3d(0, -4%, 0) rotate(-5deg)
+      scale(1.5);
+  }
+  50% {
+    transform: translate3d(0, 0, 0) translate3d(0, 4%, 0) rotate(-5deg)
+      scale(1.5);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translate3d(0, -4%, 0) rotate(-5deg)
+      scale(1.5);
+  }
+}
+
+@keyframes fly1 {
+  0% {
+    transform: translate3d(0, 0, 0) translate3d(0, -5%, 0) translateY(-50%);
+  }
+  50% {
+    transform: translate3d(0, 0, 0) translate3d(0, 5%, 0) translateY(-50%);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translate3d(0, -5%, 0) translateY(-50%);
+  }
+}
